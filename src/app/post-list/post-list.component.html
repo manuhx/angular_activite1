@@ -1,0 +1,23 @@
+<li [ngClass]="{'list-group-item': true,
+'list-group-item-success': getListStyle('success'),
+'list-group-item-danger': getListStyle('danger')}">
+
+  <h4>Appareil : {{ post.getTitle() }}</h4>
+  <h6>{{ post.getCreatedAt() | date: 'EEEE d MMMM y' | titlecase }}</h6>
+  <p>{{ post.getContent() }}</p>
+
+  <div class="btn-toolbar">
+    <button type="button"
+            class="btn btn-success"
+            (click)="likePost()">Love it!</button>
+    <button type="button"
+            class="btn btn-danger"
+            (click)="dislikePost()">Don't love it!</button>
+  </div>
+  <div style="margin-top:5px">
+    <span class="glyphicon"
+          [ngClass]="{'glyphicon-thumbs-up': thumbs('up'),
+                      'glyphicon-thumbs-down': thumbs('down'),
+                      'glyphicon-hand-right': thumbs('right')}"> {{ post.getLoveIts() }}</span>
+  </div>
+</li>
