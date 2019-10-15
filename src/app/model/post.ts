@@ -6,42 +6,38 @@ export class Post {
   private createdAt: Date;
 
 
-  constructor(title: string, content: string, loveIts: number) {
+  constructor(title: string, content: string) {
     this.title = title;
     this.content = content;
-    this.loveIts = loveIts;
+    this.loveIts = 0;
     this.createdAt = new Date();
   }
 
-  get getTitle(): string {
+  getTitle(): string {
     return this.title;
   }
 
-  set setTitle(value: string) {
+  setTitle(value: string) {
     this.title = value;
   }
 
-  get getContent(): string {
+  getContent(): string {
     return this.content;
   }
 
-  set setContent(value: string) {
+  setContent(value: string) {
     this.content = value;
   }
 
-  get getLoveIts(): number {
+  getLoveIts(): number {
     return this.loveIts;
   }
 
-  set setLoveIts(value: number) {
+  setLoveIts(value: number) {
     this.loveIts = value;
   }
 
-  get getCreatedAt(): Date {
+  getCreatedAt(): Date {
     return this.createdAt;
-  }
-
-  set setCreatedAt(value: Date) {
-    this.createdAt = value;
   }
 };
